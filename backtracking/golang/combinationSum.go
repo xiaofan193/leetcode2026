@@ -36,3 +36,65 @@ func dfs(candidates []int, start int, target int) {
         path = path[:len(path) - 1]
     }
 }
+// https://leetcode.cn/problems/combination-sum-ii/description/
+
+// 给定一个候选人编号的集合 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+
+// candidates 中的每个数字在每个组合中只能使用 一次 。
+
+// 注意：解集不能包含重复的组合。 
+
+ 
+
+// 示例 1:
+
+// 输入: candidates = [10,1,2,7,6,1,5], target = 8,
+// 输出:
+// [
+// [1,1,6],
+// [1,2,5],
+// [1,7],
+// [2,6]
+// ]
+// 示例 2:
+
+// 输入: candidates = [2,5,2,1,2], target = 5,
+// 输出:
+// [
+// [1,2,2],
+// [5]
+// ]
+
+func combinationSum2(candidates []int,target int) {
+	res = make([][]int,0)
+	path = make([]int,0,len(candidates))
+	sort.Ints(candidates)
+	dfs2(candidates,0,target)
+	return res 
+}  
+
+
+func dfs2(candidates []int,start int,target int){
+	if target == 0 {
+        temp := make([]int,0)
+		copy(temp,path)
+		res = append(res,tmp)
+		return
+	}
+
+	for i := start;i <len(candidates);i++{
+		if candidates[i] > target {
+			break 
+		}
+
+		if i != start && candidates[i] == candidates[i-1] {
+			 continue 
+		}
+
+		path = append(path,candidates[i])
+		dfs2(candidates,i + 1,target - candidates[i])
+
+		path = path[:len(path) - 1]
+	}
+
+}
