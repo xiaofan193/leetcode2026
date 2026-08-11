@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tsc --noEmit --strict --target es2020 backtracking/ts/letterCombinations.ts)",
+      "Bash(git mv *)",
+      "Bash(python3 -c ' *)",
+      "Bash(rm -rf /tmp/lc_test.js /tmp/lc_test.js.tsbuildinfo)",
+      "Bash(python3 *)",
+      "Bash(git remote *)",
+      "Bash(git config *)",
+      "Bash(grep -iA1 \"url\\\\.\\\\|insteadof\")",
+      "Read(//home/charlie/**)",
+      "Read(//home/charlie/.vscode-server/data/Machine/**)",
+      "Read(//mnt/c/Users/charo/AppData/Roaming/Code/User/**)",
+      "Read(//home/**)",
+      "Bash(code --version)",
+      "Bash(go build *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(go env *)",
+      "Bash(bash -lc 'echo \"$PATH\" | tr \":\" \"\\\\n\" | grep -n \"go/bin\"')",
+      "Bash(bash -lc 'echo \"HOME=$HOME\"; echo \"$PATH\" | tr \":\" \"\\\\n\" | grep -c \"home/charlie/go/bin\" ; echo \"--- tail of path ---\"; echo \"$PATH\" | tr \":\" \"\\\\n\" | tail -8')",
+      "Bash(bash -ic 'echo \"$PATH\" | tr \":\" \"\\\\n\" | grep -n \"go/bin\"')",
+      "Bash(echo \"=== exit: $? ===\")",
+      "Bash(echo \"=== exit $? ===\")",
+      "Read(//mnt/c/Users/**)"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+pakckage golang
+// https://leetcode.cn/problems/fibonacci-number/description/
+// 斐波那契数列
+
+func fib(n int) int {
+  if n < 2 {
+		return n 
+	}
+
+	a,b ,c:= 0 ,1,0
+
+	for i :=1;i < n;i++ {
+		c = a+ b
+		a,b = b,c
+	}
+	
+   
+	return c
+}
