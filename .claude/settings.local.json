@@ -22,7 +22,20 @@
       "Bash(bash -ic 'echo \"$PATH\" | tr \":\" \"\\\\n\" | grep -n \"go/bin\"')",
       "Bash(echo \"=== exit: $? ===\")",
       "Bash(echo \"=== exit $? ===\")",
-      "Read(//mnt/c/Users/**)"
+      "Read(//mnt/c/Users/**)",
+      "Read(//proc/**)",
+      "Read(//usr/lib/**)",
+      "Bash(cmd.exe /c \"dir \\\\\\\\\\\\\\\\wsl.localhost\\\\\\\\Ubuntu-24.04\\\\\\\\home\\\\\\\\charlie\\\\\\\\pro\\\\\\\\leetcode2026\")",
+      "Bash(echo \"===EXIT: $?===\")",
+      "Bash(cmd.exe /c \"dir \\\\\\\\\\\\\\\\wsl.localhost\")",
+      "Bash(echo \"---WSL$---\")",
+      "Bash(cmd.exe /c \"dir \\\\\\\\\\\\\\\\wsl$\\\\\\\\Ubuntu-24.04\\\\\\\\home\")",
+      "Bash(echo \"===EXIT2: $?===\")",
+      "Bash(powershell.exe -NoProfile -Command \"[System.IO.Directory]::SetCurrentDirectory\\('\\\\\\\\\\\\\\\\wsl.localhost\\\\\\\\Ubuntu-24.04\\\\\\\\home\\\\\\\\charlie\\\\\\\\pro\\\\\\\\leetcode2026'\\); Write-Host 'SetCurrentDirectory OK:' [System.IO.Directory]::GetCurrentDirectory\\(\\)\")",
+      "Bash(echo \"===PSEXIT: $?===\")",
+      "Bash(go version *)",
+      "Bash(gopls version *)",
+      "Bash(go version:*)"
     ]
   }
 }
