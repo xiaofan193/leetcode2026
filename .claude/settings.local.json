@@ -35,7 +35,8 @@
       "Bash(echo \"===PSEXIT: $?===\")",
       "Bash(go version *)",
       "Bash(gopls version *)",
-      "Bash(go version:*)"
+      "Bash(go version:*)",
+      "Bash(node *)"
     ]
   }
 }
