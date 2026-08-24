@@ -1,4 +1,4 @@
-pakckage golang
+package golang
 // min_cost_climbing_stairs.go
 // https://leetcode.cn/problems/min-cost-climbing-stairs/
 // 756. 使用最小花费爬楼梯

@@ -1,4 +1,4 @@
-pakckage golang
+package golang
 
 // https://leetcode.cn/problems/climbing-stairs/description/
 // 70 爬楼梯

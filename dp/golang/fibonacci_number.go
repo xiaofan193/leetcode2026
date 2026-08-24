@@ -1,4 +1,4 @@
-pakckage golang
+package golang
 // https://leetcode.cn/problems/fibonacci-number/description/
 // 斐波那契数列
 

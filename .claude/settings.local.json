@@ -36,7 +36,10 @@
       "Bash(go version *)",
       "Bash(gopls version *)",
       "Bash(go version:*)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(go test *)",
+      "Skill(superpowers:systematic-debugging)",
+      "Bash(node:*)"
     ]
   }
 }
