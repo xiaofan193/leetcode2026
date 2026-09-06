@@ -63,7 +63,6 @@ func zeroOnePackage1D(weight, value []int, bagWeight int) int {
 			dp[j] = max(dp[j], dp[j-weight[i]]+value[i])
 		}
 	}
-
 	return dp[bagWeight]
 }
 
