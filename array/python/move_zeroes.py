@@ -1,4 +1,3 @@
-# 283
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
@@ -7,11 +6,11 @@ class Solution:
         n = len(nums)
         k = 0
         for i in range (0,n):
-            if nums[i] != 0:
+            if i != 0:
                 nums[k] = nums[i]
                 k+= 1
 
 
         while (k < n):
             nums[k] = 0
-            k+=1
+            k+= 1
