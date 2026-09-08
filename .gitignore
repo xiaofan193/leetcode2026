@@ -1,0 +1,11 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# Go 编译产物
+*.exe
+*.out
+
+# Node / TypeScript
+node_modules/
+*.tsbuildinfo

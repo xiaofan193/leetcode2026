@@ -8,7 +8,7 @@
 | ---- | ---- | ---- |
 | 📦 动态规划 | 基础 / 0-1 背包 / 股票 / 子序列 | [dp](./dp) |
 | 🔁 回溯算法 | 组合 / 分割 / 子集 / 排列 / 棋盘类问题 | [backtracking](./backtracking) |
-| 📐 数组 | 数组遍历 / 双指针 / 滑动窗口（规划中） | [array](./array) |
+| 📐 数组 | 双指针 / 原地修改 / 排序后处理 | [array](./array) |
 
 > 持续更新中，后续将补充贪心、二分查找、链表、二叉树等专题。
 
@@ -119,11 +119,44 @@ def backtracking(参数):
 
 ## 📐 数组（array）
 
-数组是算法题中最基础的数据结构，围绕它的解题技巧通常包括**双指针、滑动窗口、前缀和、二分查找、螺旋矩阵（循环不变量）**等。
+数组题围绕**下标的移动与覆盖**展开，常见套路是**双指针（快慢 / 左右 / 荷兰国旗）、原地修改、先排序再复用有序性**，目标多是 O(1) 额外空间。
 
-对应目录：[`array/`](./array)。
+对应目录：[`array/`](./array)，内含 `golang/`、`python/`、`ts/` 三个语言版本（10 题全部三语齐备）。
 
-> ⏳ 该专题正在整理中，问题会以 `array/golang/`、`array/python/`、`array/ts/` 三个子目录补充，敬请期待。
+### 基础 · 快慢双指针（原地覆盖）
+
+一个「慢指针」标记写入位，「快指针」负责扫描，即可在不新建数组的前提下完成去重 / 移除 / 归位。
+
+| 题号 | 题目 | Go | Python | TypeScript |
+| ---- | ---- | :-: | :-: | :-: |
+| 26 | 删除有序数组中的重复项 | [remove_duplicates_from_sorted_array.go](./array/golang/remove_duplicates_from_sorted_array.go) | [remove_duplicates_from_sorted_array.py](./array/python/remove_duplicates_from_sorted_array.py) | [remove_duplicates_from_sorted_array.ts](./array/ts/remove_duplicates_from_sorted_array.ts) |
+| 80 | 删除有序数组中的重复项 II | [remove_duplicates_from_sorted_array_ii.go](./array/golang/remove_duplicates_from_sorted_array_ii.go) | [remove_duplicates_from_sorted_array_ii.py](./array/python/remove_duplicates_from_sorted_array_ii.py) | [remove_duplicates_from_sorted_array_ii.ts](./array/ts/remove_duplicates_from_sorted_array_ii.ts) |
+| 27 | 移除元素 | [remove_element.go](./array/golang/remove_element.go) | [remove_element.py](./array/python/remove_element.py) | [remove_element.ts](./array/ts/remove_element.ts) |
+| 283 | 移动零 | [move_zeroes.go](./array/golang/move_zeroes.go) | [move_zeroes.py](./array/python/move_zeroes.py) | [move_zeros.ts](./array/ts/move_zeros.ts) |
+
+> 💡 **26 → 80** 是同一模板的进阶：去重条件从「每个元素保留 1 次」放宽到「最多保留 2 次」，指针的写入 / 比较时机随之变化。
+
+### 进阶 · 已排序 / 排序后处理
+
+输入本就有序（88 / 1287）或先 `sort` 的题目，再配合**双指针、相邻比较、区间统计**，往往能把组合遍历退化为线性扫描。
+
+| 题号 | 题目 | Go | Python | TypeScript |
+| ---- | ---- | :-: | :-: | :-: |
+| 88 | 合并两个有序数组 | [merge_sorted_array.go](./array/golang/merge_sorted_array.go) | [merge_sorted_array.py](./array/python/merge_sorted_array.py) | [merge_sorted_array.ts](./array/ts/merge_sorted_array.ts) |
+| 349 | 两个数组的交集 | [ntersection_of_two_arrays.go](./array/golang/ntersection_of_two_arrays.go) | [ntersection-of-two-arrays.py](./array/python/ntersection-of-two-arrays.py) | [ntersection-of-two-arrays.ts](./array/ts/ntersection-of-two-arrays.ts) |
+| 1200 | 最小绝对差 | [minimum_absolute_difference.go](./array/golang/minimum_absolute_difference.go) | [minimum_absolute_difference.py](./array/python/minimum_absolute_difference.py) | [minimum_absolute_difference.ts](./array/ts/minimum_absolute_difference.ts) |
+| 1287 | 有序数组中出现次数超过 25% 的元素 | [element_appearing_more_than-_5-_n_sorted_array.go](./array/golang/element_appearing_more_than-_5-_n_sorted_array.go) | [element_appearing_ore_than_25_in_sorted_array.py](./array/python/element_appearing_ore_than_25_in_sorted_array.py) | [element_appearing_ore_than_25_in_sorted_array.ts](./array/ts/element_appearing_ore_than_25_in_sorted_array.ts) |
+
+> 💡 **88** 用「从后往前」归并，避免覆盖 `nums1` 尚未处理的元素；**349** 先排序再双指针并**跳过重复值**，保证结果唯一。
+>
+> 📎 88 另附 Go 单元测试：[merge_sorted_array_test.go](./array/golang/merge_sorted_array_test.go)
+
+### 综合 · 分区、翻转与轮转
+
+| 题号 | 题目 | Go | Python | TypeScript |
+| ---- | ---- | :-: | :-: | :-: |
+| 75 | 颜色分类 | [sort_color.go](./array/golang/sort_color.go) | [sort_color.py](./array/python/sort_color.py) | [sort_color.ts](./array/ts/sort_color.ts) |
+| 189 | 轮转数组 | [rotate_array.go](./array/golang/rotate_array.go) | [rotae_array.py](./array/python/rotae_array.py) | [rotate_array.ts](./array/ts/rotate_array.ts) |
 
 ---
 
@@ -139,8 +172,12 @@ leetcode2026/
 │   ├── golang/          # Go 实现
 │   ├── python/          # Python 实现
 │   └── ts/              # TypeScript 实现
-├── array/               # 数组（待补充）
+├── array/               # 数组
+│   ├── golang/          # Go 实现
+│   ├── python/          # Python 实现
+│   └── ts/              # TypeScript 实现
 ├── main.go
+├── main.py
 ├── go.mod
 └── README.md
 ```
