@@ -41,7 +41,8 @@
       "Skill(superpowers:systematic-debugging)",
       "Bash(node:*)",
       "Bash(git -C /home/charlie/work/caculate/leetcode2026 status --short)",
-      "Bash(tsc --noEmit --strict --target es2020 intersection_of_three_sorted_arrays.ts)"
+      "Bash(tsc --noEmit --strict --target es2020 intersection_of_three_sorted_arrays.ts)",
+      "Bash(command -v npx bun deno ts-node)"
     ]
   }
 }
